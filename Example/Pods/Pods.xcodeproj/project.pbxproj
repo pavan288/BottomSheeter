@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0144595126B370A0F3A1DF5C65320384 /* Pods-BottomSheeter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AC28D94E3F0AE6C45BF0969B75151A /* Pods-BottomSheeter_Tests-dummy.m */; };
 		14EA40C9B6038A3D5413E2DAD68DB826 /* BottomSheeter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF398D4970474F2DC524A07E88A2A3FC /* BottomSheeter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		277B10A6241BBA4200BF57CB /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277B10A5241BBA4200BF57CB /* BottomSheetController.swift */; };
+		277B10A8241BBBEC00BF57CB /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277B10A7241BBBEB00BF57CB /* BottomSheetController.swift */; };
 		3022FF9F812FCE78F773346A5372A73E /* Pods-BottomSheeter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93817C8C2BFFFCF665A398C2DC77DBE6 /* Pods-BottomSheeter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34ECEF177BE74B25E59CE1ED12EE7F27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		35CF9DB49FBCCCF6B80CE9679578EB55 /* Pods-BottomSheeter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB3536EE467864B2F1F2C4C4A4D344C /* Pods-BottomSheeter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,7 +46,7 @@
 		1F2BAC1823080796408C90D0E2046F8A /* BottomSheeter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BottomSheeter-prefix.pch"; sourceTree = "<group>"; };
 		220B9FACBFAC0359BCC07A9ACC4847B8 /* Pods_BottomSheeter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheeter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		227A27713D9DCA54B2922253C9714255 /* Pods-BottomSheeter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BottomSheeter_Example-dummy.m"; sourceTree = "<group>"; };
-		277B10A5241BBA4200BF57CB /* BottomSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetController.swift; sourceTree = "<group>"; };
+		277B10A7241BBBEB00BF57CB /* BottomSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomSheetController.swift; path = BottomSheeter/Classes/BottomSheetController.swift; sourceTree = "<group>"; };
 		2FA484CEEF8F5DD9478FA3A1A67C1648 /* BottomSheeter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BottomSheeter.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		33F03C738B14377030B0FA693EF1B9A2 /* Pods-BottomSheeter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BottomSheeter_Tests.modulemap"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		242609E3322D93C32F3465214A199468 /* BottomSheeter */ = {
 			isa = PBXGroup;
 			children = (
-				277B10A5241BBA4200BF57CB /* BottomSheetController.swift */,
+				277B10A7241BBBEB00BF57CB /* BottomSheetController.swift */,
 				F16E2E8F05548DB2140A859C4091191E /* Pod */,
 				8300348C8756A8673BB532B621524C13 /* Support Files */,
 			);
@@ -385,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277B10A6241BBA4200BF57CB /* BottomSheetController.swift in Sources */,
+				277B10A8241BBBEC00BF57CB /* BottomSheetController.swift in Sources */,
 				84391BAA23DC0C8AAA3E3BADE8F190C5 /* BottomSheeter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
