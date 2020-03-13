@@ -22,7 +22,7 @@ pod 'BottomSheeter'
 
 ## Author
 
-pavan.powani@practo.com, pavan.powani@practo.com
+Pavan Powani, pjp288@gmail.com
 
 ## License
 
