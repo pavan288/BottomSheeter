@@ -1,0 +1,16 @@
+PODS:
+  - BottomSheeter (0.1.0)
+
+DEPENDENCIES:
+  - BottomSheeter (from `../`)
+
+EXTERNAL SOURCES:
+  BottomSheeter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BottomSheeter: 20634d1e294eedbd15e8c0ea5aeb57b03843d65b
+
+PODFILE CHECKSUM: 5d07acbea658d4d365be9ef56bd5b75dac9e9278
+
+COCOAPODS: 1.8.4

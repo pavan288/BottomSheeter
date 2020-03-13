@@ -1,0 +1,6 @@
+framework module BottomSheeter {
+  umbrella header "BottomSheeter-umbrella.h"
+
+  export *
+  module * { export * }
+}
