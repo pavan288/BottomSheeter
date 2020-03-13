@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BottomSheeter'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'BottomSheeter: One size fits all'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ This is a generic bottom sheet reusable UIViewController
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'BottomSheeter/Classes/**/*'
+  s.swift_version = '4.0'
   
   # s.resource_bundles = {
   #   'BottomSheeter' => ['BottomSheeter/Assets/*.png']
