@@ -8,7 +8,7 @@
 
 import UIKit
 
-@available(iOS 10.0, *)
+@available(iOS 11.0, *)
 @objc public class BottomSheetViewController: UIViewController {
 
     // MARK: Animation properties
@@ -31,9 +31,7 @@ import UIKit
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        if #available(iOS 11.0, *) {
-            view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        }
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.1
         view.layer.shadowRadius = 4
@@ -126,7 +124,7 @@ fileprivate enum State {
 }
 
 // MARK: PanGesture Handling
-@available(iOS 10.0, *)
+@available(iOS 11.0, *)
 extension BottomSheetViewController: UIGestureRecognizerDelegate {
 
     fileprivate func toggle(to state: State) {
