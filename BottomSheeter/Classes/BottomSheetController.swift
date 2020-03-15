@@ -8,7 +8,24 @@
 
 import UIKit
 
+@available(iOS 10.0, *)
 @objc public class BottomSheetViewController: UIViewController {
+
+    // MARK: Animation properties
+    fileprivate var currentState: State = .collapsed
+
+    let popupOffset: CGFloat = (UIScreen.main.bounds.height) / 2
+
+    lazy var animator: UIViewPropertyAnimator = UIViewPropertyAnimator(duration: 1, timingParameters: UISpringTimingParameters(dampingRatio: 0.5, initialVelocity: .zero))
+
+    lazy var panRecognizer: UIPanGestureRecognizer = {
+        let recognizer = UIPanGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(handlePan(recognizer:)))
+        recognizer.delegate = self
+        return recognizer
+    }()
+
+    // MARK: Content properties
     fileprivate lazy var bottomSheetContainerView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -27,12 +44,15 @@ import UIKit
     fileprivate var contentVC: UIViewController?
     fileprivate var didDismiss: ((Bool) -> UIViewController?)?
 
+
+    //MARK: Methods
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(bottomSheetContainerView)
         self.view.bringSubview(toFront: bottomSheetContainerView)
         setupConstraints()
         embedContent()
+        self.bottomSheetContainerView.addGestureRecognizer(panRecognizer)
     }
 
     override public func viewDidAppear(_ animated: Bool) {
@@ -74,6 +94,7 @@ import UIKit
             self.view.backgroundColor = .white
             self.view.layoutIfNeeded()
         }, completion: { (_) in
+            self.currentState = .collapsed
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -88,5 +109,128 @@ import UIKit
         bottomSheetContainerView.addSubview(vc.view)
         self.addChildViewController(vc)
         vc.didMove(toParentViewController: self)
+        self.currentState = .collapsed
     }
+}
+
+fileprivate enum State {
+    case expanded
+    case collapsed
+
+    var change: State {
+        switch self {
+        case .expanded: return .collapsed
+        case .collapsed: return .expanded
+        }
+    }
+}
+
+// MARK: PanGesture Handling
+@available(iOS 10.0, *)
+extension BottomSheetViewController: UIGestureRecognizerDelegate {
+
+    fileprivate func toggle(to state: State) {
+        switch state {
+            case .collapsed:
+                collapse(state: state)
+            case .expanded:
+                expand(state: state)
+        }
+    }
+
+    @objc func handlePan(recognizer: UIPanGestureRecognizer) {
+        guard !animator.isRunning else { return }
+        var animationProgress: CGFloat = 0
+        switch recognizer.state {
+            case .began:
+                toggle(to: currentState.change)
+                animator.pauseAnimation()
+                animationProgress = animator.fractionComplete
+            case .changed:
+                let translation = recognizer.translation(in: self.view)
+                var fraction = -translation.y / popupOffset
+
+                if currentState == .expanded { fraction *= -1 }
+                if animator.isReversed { fraction *= -1 }
+                animator.fractionComplete = fraction + animationProgress
+            case .ended:
+                let yVelocity = recognizer.velocity(in: bottomSheetContainerView).y
+                let shouldClose = yVelocity > 0
+
+                if yVelocity == 0 {
+                    animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+                    break
+                }
+
+                switch currentState {
+                case .expanded:
+                    if !shouldClose && !animator.isReversed {
+                        animator.isReversed = !animator.isReversed
+                    }
+                    if shouldClose && animator.isReversed { animator.isReversed = !animator.isReversed }
+                case .collapsed:
+                    if shouldClose && !animator.isReversed { animator.isReversed = !animator.isReversed }
+                    if !shouldClose && animator.isReversed { animator.isReversed = !animator.isReversed }
+                }
+                animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+            default: break
+        }
+    }
+
+    fileprivate func expand(state: State) {
+        for constraint in  self.bottomSheetContainerView.constraints {
+            if constraint.firstAttribute == .height {
+                NSLayoutConstraint.deactivate([constraint])
+            }
+        }
+        let height = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.view.frame.size.height * 0.8)
+        NSLayoutConstraint.activate([height])
+
+        animator.addAnimations {
+            self.view.layoutIfNeeded()
+        }
+
+        animator.addCompletion { (position) in
+            switch position {
+                case .start:
+                    self.currentState = state.change
+                case .end:
+                    self.currentState = state
+                default: break
+            }
+        }
+
+        animator.startAnimation()
+    }
+
+    fileprivate func collapse(state: State) {
+        for constraint in  self.bottomSheetContainerView.constraints {
+            if constraint.firstAttribute == .height {
+                NSLayoutConstraint.deactivate([constraint])
+            }
+        }
+        let height = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.view.frame.size.height * 0.3)
+        NSLayoutConstraint.activate([height])
+
+        animator.addAnimations {
+            self.view.layoutIfNeeded()
+        }
+
+        animator.addCompletion { (position) in
+            switch position {
+                case .start:
+                    self.currentState = state.change
+                case .end:
+                    self.currentState = state
+                default: break
+            }
+        }
+
+        animator.startAnimation()
+    }
+
+    fileprivate func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return abs((panRecognizer.velocity(in: panRecognizer.view)).y) > abs((panRecognizer.velocity(in: panRecognizer.view)).x)
+    }
+
 }
