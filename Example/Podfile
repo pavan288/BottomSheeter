@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'BottomSheeter_Example' do
-  pod 'BottomSheeter'
+  pod 'BottomSheeter', :path => '../'
 
   target 'BottomSheeter_Tests' do
     inherit! :search_paths

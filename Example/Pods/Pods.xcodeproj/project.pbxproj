@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0144595126B370A0F3A1DF5C65320384 /* Pods-BottomSheeter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AC28D94E3F0AE6C45BF0969B75151A /* Pods-BottomSheeter_Tests-dummy.m */; };
-		14EA40C9B6038A3D5413E2DAD68DB826 /* BottomSheeter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D995B9DDA24DF3F2A81D9B184D0DEFA /* BottomSheeter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EA40C9B6038A3D5413E2DAD68DB826 /* BottomSheeter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA870F552F207F5730F6BCE7886B1BEA /* BottomSheeter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3022FF9F812FCE78F773346A5372A73E /* Pods-BottomSheeter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93817C8C2BFFFCF665A398C2DC77DBE6 /* Pods-BottomSheeter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34ECEF177BE74B25E59CE1ED12EE7F27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		35CF9DB49FBCCCF6B80CE9679578EB55 /* Pods-BottomSheeter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB3536EE467864B2F1F2C4C4A4D344C /* Pods-BottomSheeter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38DACA0243ADCDB95BB411D0CD87B880 /* BottomSheeter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE256E785A53EFED6498FC6ACBC6BAE /* BottomSheeter-dummy.m */; };
+		38DACA0243ADCDB95BB411D0CD87B880 /* BottomSheeter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB99DB3A2069C20CFEBCD49AAFD5BD /* BottomSheeter-dummy.m */; };
 		43C81866AB21A91F2147B21635FA6B8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5F67ADDBE53A86D6287C037FEABE1A4D /* Pods-BottomSheeter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 227A27713D9DCA54B2922253C9714255 /* Pods-BottomSheeter_Example-dummy.m */; };
-		B82EBE98C01DE4607C5858D2B105D43E /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B7221B46243231535D48A58812805 /* BottomSheetController.swift */; };
+		B82EBE98C01DE4607C5858D2B105D43E /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241AB9D7536E7A5DDD1CE0611A39563 /* BottomSheetController.swift */; };
 		D25B260ABA2A9097959780BB01C3BD84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,36 +37,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0812A1D2B0258AB2EF76701D31F7FC56 /* BottomSheeter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BottomSheeter-Info.plist"; sourceTree = "<group>"; };
+		0B8C3BC50D059B969B3BC6CD57E13ECB /* BottomSheeter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BottomSheeter.modulemap; sourceTree = "<group>"; };
 		0D9C98D1D41A1A84D6F6736FCA42F133 /* Pods-BottomSheeter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BottomSheeter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		0F1B9A30576217D3BED62C46BBA4278E /* Pods-BottomSheeter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BottomSheeter_Example.modulemap"; sourceTree = "<group>"; };
-		13410E6900C7F1C5424B1EC5E996BC2B /* BottomSheeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BottomSheeter.debug.xcconfig; sourceTree = "<group>"; };
 		172B93304B9EF99E856225EC51BA35AB /* Pods-BottomSheeter_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BottomSheeter_Tests-Info.plist"; sourceTree = "<group>"; };
 		180415E590CE29EF1FB044B63272B8B3 /* Pods-BottomSheeter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BottomSheeter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		220B9FACBFAC0359BCC07A9ACC4847B8 /* Pods_BottomSheeter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BottomSheeter_Tests.framework; path = "Pods-BottomSheeter_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227A27713D9DCA54B2922253C9714255 /* Pods-BottomSheeter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BottomSheeter_Example-dummy.m"; sourceTree = "<group>"; };
-		2C68A3F4F1140CB625D3D37B2A8845FF /* BottomSheeter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BottomSheeter.modulemap; sourceTree = "<group>"; };
-		2CE256E785A53EFED6498FC6ACBC6BAE /* BottomSheeter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BottomSheeter-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3241AB9D7536E7A5DDD1CE0611A39563 /* BottomSheetController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BottomSheetController.swift; path = BottomSheeter/Classes/BottomSheetController.swift; sourceTree = "<group>"; };
 		33F03C738B14377030B0FA693EF1B9A2 /* Pods-BottomSheeter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BottomSheeter_Tests.modulemap"; sourceTree = "<group>"; };
-		3D995B9DDA24DF3F2A81D9B184D0DEFA /* BottomSheeter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BottomSheeter-umbrella.h"; sourceTree = "<group>"; };
 		4338151AAA28F9413676F1FCF717D7BC /* Pods-BottomSheeter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BottomSheeter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4DE559FEA6EA389A4C1D1724C7CD145E /* Pods-BottomSheeter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BottomSheeter_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		609B7221B46243231535D48A58812805 /* BottomSheetController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BottomSheetController.swift; path = BottomSheeter/Classes/BottomSheetController.swift; sourceTree = "<group>"; };
+		4E006EDB0319BC04C95751B581A82C9E /* BottomSheeter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BottomSheeter-prefix.pch"; sourceTree = "<group>"; };
+		565F70491757E7067052F2FC7634E5EE /* BottomSheeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BottomSheeter.debug.xcconfig; sourceTree = "<group>"; };
 		64A721E88CBAA50A3377AF954D3A7CFC /* Pods-BottomSheeter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BottomSheeter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		719509C1C9BE75C2B5CE7E9C6B2E5019 /* BottomSheeter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BottomSheeter-prefix.pch"; sourceTree = "<group>"; };
+		6BEB99DB3A2069C20CFEBCD49AAFD5BD /* BottomSheeter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BottomSheeter-dummy.m"; sourceTree = "<group>"; };
 		7C2007ED34B32CF5C449040496E52E34 /* Pods-BottomSheeter_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BottomSheeter_Example-Info.plist"; sourceTree = "<group>"; };
+		8DADADE10B5BD3843942344E7422EE9D /* BottomSheeter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BottomSheeter-Info.plist"; sourceTree = "<group>"; };
 		93817C8C2BFFFCF665A398C2DC77DBE6 /* Pods-BottomSheeter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BottomSheeter_Tests-umbrella.h"; sourceTree = "<group>"; };
 		97AC28D94E3F0AE6C45BF0969B75151A /* Pods-BottomSheeter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BottomSheeter_Tests-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8627BD70F3971A15A577066678803A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BA27EE65838F3319FC8962C866F16149 /* BottomSheeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BottomSheeter.framework; path = BottomSheeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8172DE3E2F90625696B34CB0FDAE5 /* Pods-BottomSheeter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BottomSheeter_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C0C882E72ED2C89CFEC13007273DFAE0 /* Pods-BottomSheeter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BottomSheeter_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CA870F552F207F5730F6BCE7886B1BEA /* BottomSheeter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BottomSheeter-umbrella.h"; sourceTree = "<group>"; };
 		CE01D915A96524740DCE001A2444A374 /* Pods-BottomSheeter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BottomSheeter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D5155C3C9203DC37A8B6F439187F4913 /* BottomSheeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BottomSheeter.release.xcconfig; sourceTree = "<group>"; };
+		D84F29CA84C775B3EF4B772CAF3DA662 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		DA9B3458A9EAAA11A3FD246F10D261DC /* Pods_BottomSheeter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BottomSheeter_Example.framework; path = "Pods-BottomSheeter_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9B30B4CEE2A9B9A595CD1648F8E0A7 /* BottomSheeter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BottomSheeter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DF7A2D8C2CCFD7E05DBD05A57E3AFB35 /* Pods-BottomSheeter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BottomSheeter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EBB3536EE467864B2F1F2C4C4A4D344C /* Pods-BottomSheeter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BottomSheeter_Example-umbrella.h"; sourceTree = "<group>"; };
-		F6245E9D976912166805DD214037FA6D /* BottomSheeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BottomSheeter.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		24A287BA4DA2F36906E836038C96FA07 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADC331258FB0F87F6A395DE24A62B0FE /* BottomSheeter */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		291E3E3585D96107B36DB831D852A5DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,14 +125,6 @@
 				220B9FACBFAC0359BCC07A9ACC4847B8 /* Pods_BottomSheeter_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		71C22BF051A38AE2CFE8857FA05665F1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AAD521999C85F05E69717414FC40618E /* BottomSheeter */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		8F7C965462B0B3698A5514C00F078457 /* Pods-BottomSheeter_Tests */ = {
@@ -140,14 +143,40 @@
 			path = "Target Support Files/Pods-BottomSheeter_Tests";
 			sourceTree = "<group>";
 		};
-		AAD521999C85F05E69717414FC40618E /* BottomSheeter */ = {
+		95126DF716FD28B8D73D47B20678238B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				609B7221B46243231535D48A58812805 /* BottomSheetController.swift */,
-				E2DE7A1DC35620FC9D65A7AD3F883579 /* Support Files */,
+				0B8C3BC50D059B969B3BC6CD57E13ECB /* BottomSheeter.modulemap */,
+				6BEB99DB3A2069C20CFEBCD49AAFD5BD /* BottomSheeter-dummy.m */,
+				8DADADE10B5BD3843942344E7422EE9D /* BottomSheeter-Info.plist */,
+				4E006EDB0319BC04C95751B581A82C9E /* BottomSheeter-prefix.pch */,
+				CA870F552F207F5730F6BCE7886B1BEA /* BottomSheeter-umbrella.h */,
+				565F70491757E7067052F2FC7634E5EE /* BottomSheeter.debug.xcconfig */,
+				D5155C3C9203DC37A8B6F439187F4913 /* BottomSheeter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BottomSheeter";
+			sourceTree = "<group>";
+		};
+		ADC331258FB0F87F6A395DE24A62B0FE /* BottomSheeter */ = {
+			isa = PBXGroup;
+			children = (
+				3241AB9D7536E7A5DDD1CE0611A39563 /* BottomSheetController.swift */,
+				B34AA2C921E02BB1EAA101FEEE67C11E /* Pod */,
+				95126DF716FD28B8D73D47B20678238B /* Support Files */,
 			);
 			name = BottomSheeter;
-			path = BottomSheeter;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B34AA2C921E02BB1EAA101FEEE67C11E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DD9B30B4CEE2A9B9A595CD1648F8E0A7 /* BottomSheeter.podspec */,
+				D84F29CA84C775B3EF4B772CAF3DA662 /* LICENSE */,
+				A8627BD70F3971A15A577066678803A9 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -179,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				24A287BA4DA2F36906E836038C96FA07 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				71C22BF051A38AE2CFE8857FA05665F1 /* Pods */,
 				291E3E3585D96107B36DB831D852A5DA /* Products */,
 				026739A769F20856309F7AF783D0FE00 /* Targets Support Files */,
 			);
@@ -192,21 +221,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E2DE7A1DC35620FC9D65A7AD3F883579 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2C68A3F4F1140CB625D3D37B2A8845FF /* BottomSheeter.modulemap */,
-				2CE256E785A53EFED6498FC6ACBC6BAE /* BottomSheeter-dummy.m */,
-				0812A1D2B0258AB2EF76701D31F7FC56 /* BottomSheeter-Info.plist */,
-				719509C1C9BE75C2B5CE7E9C6B2E5019 /* BottomSheeter-prefix.pch */,
-				3D995B9DDA24DF3F2A81D9B184D0DEFA /* BottomSheeter-umbrella.h */,
-				13410E6900C7F1C5424B1EC5E996BC2B /* BottomSheeter.debug.xcconfig */,
-				F6245E9D976912166805DD214037FA6D /* BottomSheeter.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BottomSheeter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +408,7 @@
 /* Begin XCBuildConfiguration section */
 		185A12A757B195EFC5C579CF9CC73D1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13410E6900C7F1C5424B1EC5E996BC2B /* BottomSheeter.debug.xcconfig */;
+			baseConfigurationReference = 565F70491757E7067052F2FC7634E5EE /* BottomSheeter.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -487,7 +501,7 @@
 		};
 		3C7C89BA537A422522818195FE8A1409 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6245E9D976912166805DD214037FA6D /* BottomSheeter.release.xcconfig */;
+			baseConfigurationReference = D5155C3C9203DC37A8B6F439187F4913 /* BottomSheeter.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;

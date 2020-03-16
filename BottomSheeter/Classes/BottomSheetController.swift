@@ -71,7 +71,9 @@ import UIKit
         controller.modalPresentationStyle = .overFullScreen
         return controller
     }
+}
 
+extension BottomSheetViewController {
     fileprivate func setupConstraints() {
         let leading = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
         let trailing = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
@@ -111,18 +113,6 @@ import UIKit
     }
 }
 
-fileprivate enum State {
-    case expanded
-    case collapsed
-
-    var change: State {
-        switch self {
-        case .expanded: return .collapsed
-        case .collapsed: return .expanded
-        }
-    }
-}
-
 // MARK: PanGesture Handling
 @available(iOS 11.0, *)
 extension BottomSheetViewController: UIGestureRecognizerDelegate {
@@ -133,6 +123,8 @@ extension BottomSheetViewController: UIGestureRecognizerDelegate {
                 collapse(state: state)
             case .expanded:
                 expand(state: state)
+            case .dismissed:
+                collapse(state: state)
         }
     }
 
@@ -141,7 +133,20 @@ extension BottomSheetViewController: UIGestureRecognizerDelegate {
         var animationProgress: CGFloat = 0
         switch recognizer.state {
             case .began:
-                toggle(to: currentState.change)
+                let translation = recognizer.translation(in: self.view)
+                switch currentState {
+                    case .expanded:
+                        if translation.y > 0 {
+                            toggle(to: .collapsed)
+                        }
+                    case .collapsed:
+                        if translation.y > 0.0 {
+                            toggle(to: .dismissed)
+                        } else if translation.y < 0.0 {
+                            toggle(to: .expanded)
+                        }
+                    case .dismissed: break
+                }
                 animator.pauseAnimation()
                 animationProgress = animator.fractionComplete
             case .changed:
@@ -162,11 +167,12 @@ extension BottomSheetViewController: UIGestureRecognizerDelegate {
 
                 switch currentState {
                 case .expanded:
-                    if !shouldClose && !animator.isReversed {
-                        animator.isReversed = !animator.isReversed
-                    }
+                    if !shouldClose && !animator.isReversed { animator.isReversed = !animator.isReversed }
                     if shouldClose && animator.isReversed { animator.isReversed = !animator.isReversed }
                 case .collapsed:
+                    if shouldClose && !animator.isReversed { animator.isReversed = !animator.isReversed }
+                    if !shouldClose && animator.isReversed { animator.isReversed = !animator.isReversed }
+                case .dismissed:
                     if shouldClose && !animator.isReversed { animator.isReversed = !animator.isReversed }
                     if !shouldClose && animator.isReversed { animator.isReversed = !animator.isReversed }
                 }
@@ -202,33 +208,51 @@ extension BottomSheetViewController: UIGestureRecognizerDelegate {
     }
 
     fileprivate func collapse(state: State) {
-        for constraint in  self.bottomSheetContainerView.constraints {
-            if constraint.firstAttribute == .height {
-                NSLayoutConstraint.deactivate([constraint])
+        if state == .dismissed {
+            bgTapped(self)
+        } else {
+            for constraint in  self.bottomSheetContainerView.constraints {
+                if constraint.firstAttribute == .height {
+                    NSLayoutConstraint.deactivate([constraint])
+                }
             }
-        }
-        let height = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.view.frame.size.height * 0.3)
-        NSLayoutConstraint.activate([height])
+            let height = NSLayoutConstraint(item: bottomSheetContainerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.view.frame.size.height * 0.3)
+            NSLayoutConstraint.activate([height])
 
-        animator.addAnimations {
-            self.view.layoutIfNeeded()
-        }
-
-        animator.addCompletion { (position) in
-            switch position {
-                case .start:
-                    self.currentState = state.change
-                case .end:
-                    self.currentState = state
-                default: break
+            animator.addAnimations {
+                self.view.layoutIfNeeded()
             }
-        }
 
-        animator.startAnimation()
+            animator.addCompletion { (position) in
+                switch position {
+                    case .start:
+                        self.currentState = state.change
+                    case .end:
+                        self.currentState = state
+                    default: break
+                }
+            }
+
+            animator.startAnimation()
+        }
     }
 
     fileprivate func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return abs((panRecognizer.velocity(in: panRecognizer.view)).y) > abs((panRecognizer.velocity(in: panRecognizer.view)).x)
     }
 
+}
+
+fileprivate enum State {
+    case expanded
+    case collapsed
+    case dismissed
+
+    var change: State {
+        switch self {
+        case .expanded: return .collapsed
+        case .collapsed: return .expanded
+        case .dismissed: return .dismissed
+        }
+    }
 }
