@@ -1,16 +1,16 @@
 PODS:
-  - BottomSheeter (0.1.0)
+  - BottomSheeter (0.1.4)
 
 DEPENDENCIES:
-  - BottomSheeter (from `../`)
+  - BottomSheeter
 
-EXTERNAL SOURCES:
-  BottomSheeter:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - BottomSheeter
 
 SPEC CHECKSUMS:
-  BottomSheeter: 20634d1e294eedbd15e8c0ea5aeb57b03843d65b
+  BottomSheeter: a7c377fc2d8e3cd4e450c72a8e174eb013480abb
 
-PODFILE CHECKSUM: 5d07acbea658d4d365be9ef56bd5b75dac9e9278
+PODFILE CHECKSUM: 581d5c191eaa3e726c77a2bdb82560f3a5e22d69
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
