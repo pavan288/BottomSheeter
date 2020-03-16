@@ -21,7 +21,7 @@ pod 'BottomSheeter'
 ```
 
 ## Demo
-![BottomSheeter Demo](demo/demo.gif | width=186)
+<img src="https://gfycat.com/composedcarefulbuckeyebutterfly" width="186" height="402">
 
 ## Author
 
