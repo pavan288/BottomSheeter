@@ -1,9 +1,9 @@
 //
-//  PractoBottomSheetViewController.swift
+//  BottomSheetViewController.swift
 //  BottomSheetController
 //
 //  Created by Pavan Powani on 13/03/20.
-//  Copyright © 2020 Practo. All rights reserved.
+//  Copyright © 2020 Pavan Powani. All rights reserved.
 //
 
 import UIKit
