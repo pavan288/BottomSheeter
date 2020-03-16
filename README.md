@@ -20,6 +20,9 @@ it, simply add the following line to your Podfile:
 pod 'BottomSheeter'
 ```
 
+## Demo
+![BottomSheeter Demo](demo/demo.gif)
+
 ## Author
 
 Pavan Powani, pjp288@gmail.com
