@@ -21,7 +21,7 @@ pod 'BottomSheeter'
 ```
 
 ## Demo
-![Demo - BottomSheeter](demo/demo.gif)
+
 
 ## Author
 
